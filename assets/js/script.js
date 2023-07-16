@@ -124,7 +124,17 @@ function displaySubtractQuestion(operand1, operand2){
 
 }
 
-function displayDivisionQuestion(operand1, operand2){
+function displayDivisionQuestion(num1, num2){
+    let operand1, operand2;
+    if (num1 > num2) {
+        operand1 = num1;
+        operand2 = num2;
+    } else {
+        operand1 = num2;
+        operand2 = num1;
+    }
+
+    operand1 -= operand1 % operand2;
 
     document.getElementById('operand1').textContent = operand1;
     document.getElementById('operand2').textContent = operand2;
